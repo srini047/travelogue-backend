@@ -7,6 +7,7 @@ const tourGuide = new mongoose.Schema({
   phone_number: { type: Number, required: true },
   biography: { type: String, required: true },
   language: { type: [String], required: true },
+  ratings: { type: Number, required: true },
 });
 
 const newTourGuide = new mongoose.model("newTourGuide", tourGuide);

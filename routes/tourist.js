@@ -10,7 +10,8 @@ router.post("/newTourist", function (req, res) {
       phone_number: 1223,
       location: "acfvcsfvs",
       languages: ["Eng", "hindi"],
-      needs: "person with deep understanding of technical skills..."
+      needs: "person with deep understanding of technical skills...",
+      ratings: 4.9
     });
 
     newTourist.save();

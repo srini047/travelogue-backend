@@ -8,6 +8,7 @@ const tourist = new mongoose.Schema({
   location: { type: String, required: true },
   language: { type: [String], required: true },
   needs: { type: String, required: true },
+  ratings: { type: Number, required: true },
 });
 
 const newTourist = new mongoose.model("newTourist", tourist);

@@ -9,7 +9,8 @@ router.post("/newGuide", function (req, res) {
       email: "test@test.com",
       phone_number: 1223,
       biography: "acfvcsfvs",
-      languages: ["Eng", "hindi"],
+      languages: ["English", "Hindi", "Tamil", "Telugu",],
+      ratings: 5.0,
     });
 
     tourGuide.save();
