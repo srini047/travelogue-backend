@@ -2,7 +2,9 @@ require('dotenv').config()
 const express = require("express");
 const app = express();
 const newGuide = require("./routes/guide");
-const getGuide = require("./routes/guides");
+const getGuides = require("./routes/guides");
+const newTourist = require("./routes/tourist");
+const getTourists = require("./routes/tourists");
 const path = require('path');
 
 const port = process.env.PORT || 3000;
@@ -12,7 +14,9 @@ app.use(express.static(staticPath));
 
 require("./database/connection");
 app.use(newGuide);
-app.use(getGuide);
+app.use(getGuides);
+app.use(newTourist);
+app.use(getTourists);
 
 app.get("/", (req, res) => {
   res.send("Success: 200 OK");

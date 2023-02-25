@@ -2,20 +2,20 @@ require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const tourGuideSchema = require("../models/tourist_guide_schema");
+const touristSchema = require("../models/tourist_schema");
 
-router.get("/guides", function (req, res) {
+router.get("/tourists", function (req, res) {
   const db = process.env.MONGO_DB_URL;
   mongoose
     .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log("Connected to the database!");
       // Find all documents in the collection
-      tourGuideSchema.find({}, (err, docs) => {
+      touristSchema.find({}, (err, docs) => {
         if (err) {
           console.log("Error fetching documents:", err);
         } else {
-          // console.log("Documents:", docs);
+        //   console.log("Documents:", docs);
           res.send({ docs });
         }
       });
