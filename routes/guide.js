@@ -4,13 +4,20 @@ const newTourGuide = require("../models/tourist_guide_schema");
 
 router.post("/newGuide", function (req, res) {
   try {
+    const name = req.query.name;
+    const email = req.query.email;
+    // const number = Number(req.query.number);
+    const bio = req.query.bio;
+    const lang = req.query.lang;
+    // const ratings = Number(req.query.ratings);
+
     const tourGuide = new newTourGuide({
-      name: "Test",
-      email: "test@test.com",
+      name: `${name}` || "test",
+      email: `${email}` || "test@example.com",
       phone_number: 1223,
-      biography: "acfvcsfvs",
-      languages: ["English", "Hindi", "Tamil", "Telugu",],
-      ratings: 5.0,
+      biography: `${bio}` || "Bio of test",
+      languages: `${lang}` || ['English', 'Telugu', 'Hindi'],
+      ratings: 5,
     });
 
     tourGuide.save();
