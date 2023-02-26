@@ -21,7 +21,7 @@ router.get("/details", async function (req, res) {
       model: "command-xlarge-nightly",
       return_likelihoods: "NONE",
       truncate: "END",
-      prompt: `Give a brief description about ${place} for the tourists.`,
+      prompt: `Give a brief description about ${place} for the tourists in about 200 words.`,
       num_results: 10,
     },
   };
